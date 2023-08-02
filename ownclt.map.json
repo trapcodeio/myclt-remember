@@ -1,0 +1,43 @@
+{
+  "namespace": "remember",
+  "file": "./index.ts",
+  "commands": {
+    "set": {
+      "desc": "Set a value using a key.",
+      "args": {
+        "key": "required: Key to set.",
+        "value": "required: Value to set."
+      }
+    },
+    "get": {
+      "desc": "Get a value using a key.",
+      "args": {
+        "key": "required: Key to get."
+      }
+    },
+    "has": {
+      "desc": "Check if a key exists.",
+      "args": {
+        "key": "required: Key to check."
+      }
+    },
+    "unset": {
+      "desc": "Unset a key.",
+      "args": {
+        "key": "required: Key to unset."
+      }
+    },
+    "backup/jsonbank": {
+      "desc": "Backup your data to your Json bank account.",
+      "args": {
+        "project": "Your json bank project name."
+      }
+    },
+    "restore/jsonbank": {
+      "desc": "Restore your data from your Json bank account.",
+      "args": {
+        "project": "Your json bank project name."
+      }
+    }
+  }
+}

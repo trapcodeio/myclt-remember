@@ -1,0 +1,23 @@
+{
+  "name": "ownclt-remember",
+  "version": "0.0.1",
+  "description": "An ownclt command that stores data in the command line.",
+  "main": "index.js",
+  "repository": "https://github.com/trapcodeio/ownclt-remember",
+  "author": "trapcodeio",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "watch": "npx tsc -w",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "jsonbank": "^1.5.0",
+    "ownclt": "^0.2.14",
+    "semantic-inquirer": "^0.1.1"
+  }
+}
