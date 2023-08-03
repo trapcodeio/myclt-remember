@@ -3,7 +3,7 @@ import {Q} from "semantic-inquirer";
 import {JsonBank} from "jsonbank";
 
 async function initializeJsonBank() {
-    // ask for the private key
+    // ask for the private key.
     const publicKey = await Q.ask(`Enter your Public key:`);
     const privateKey = await Q.ask(`Enter your Private key:`, {type: `password`});
     
