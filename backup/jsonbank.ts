@@ -2,6 +2,9 @@ import {defineCommand} from "myclt/functions/Helpers";
 import {Q} from "semantic-inquirer";
 import {JsonBank} from "jsonbank";
 
+/**
+ * Initialize jsonbank
+ */
 async function initializeJsonBank() {
     // ask for the private key.
     const publicKey = await Q.ask(`Enter your Public key:`);
@@ -22,7 +25,7 @@ const Backup = defineCommand(async ({store, args: [project], log}) => {
     // initialize jsonbank
     const jsb = await initializeJsonBank()
 
-    // check if project is set
+    // check if the project is set
     if (!project) {
         project = await Q.ask(`Enter the project name:`, {type: `input`});
     }
