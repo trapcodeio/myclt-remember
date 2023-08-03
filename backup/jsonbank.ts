@@ -1,4 +1,4 @@
-import {defineCommand} from "ownclt/functions/Helpers";
+import {defineCommand} from "myclt/functions/Helpers";
 import {Q} from "semantic-inquirer";
 import {JsonBank} from "jsonbank";
 
@@ -6,18 +6,15 @@ async function initializeJsonBank() {
     // ask for the private key
     const publicKey = await Q.ask(`Enter your Public key:`);
     const privateKey = await Q.ask(`Enter your Private key:`, {type: `password`});
-
-
+    
 
     // initialize jsonbank
-    const jsb = new JsonBank({
+    return new JsonBank({
         keys: {
             pub: publicKey,
             prv: privateKey,
         }
-    })
-
-    return jsb;
+    });
 }
 
 const Backup = defineCommand(async ({store, args: [project], log}) => {
@@ -34,7 +31,7 @@ const Backup = defineCommand(async ({store, args: [project], log}) => {
 
     try {
         const doc = await jsb.createDocumentIfNotExists({
-            name: `ownclt-remember`,
+            name: `myclt-remember`,
             content: data,
             project
         })
@@ -67,7 +64,7 @@ const Restore = defineCommand(async ({ log, store, args: [project]}) => {
     }
 
     try {
-        const file = await jsb.getOwnDocumentMeta(project + `/ownclt-remember`);
+        const file = await jsb.getOwnDocumentMeta(project + `/myclt-remember`);
         const content = await jsb.getOwnContent(file.id);
 
         store.clear();

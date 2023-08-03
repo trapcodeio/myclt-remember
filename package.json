@@ -1,9 +1,9 @@
 {
-  "name": "ownclt-remember",
+  "name": "myclt-remember",
   "version": "0.0.1",
-  "description": "An ownclt command that stores data in the command line.",
+  "description": "A myclt command that stores data in the command line.",
   "main": "index.js",
-  "repository": "https://github.com/trapcodeio/ownclt-remember",
+  "repository": "https://github.com/trapcodeio/myclt-remember",
   "author": "trapcodeio",
   "license": "MIT",
   "private": false,
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "jsonbank": "^1.5.0",
-    "ownclt": "^0.2.14",
+    "myclt": "^0.1.1",
     "semantic-inquirer": "^0.1.1"
   }
 }

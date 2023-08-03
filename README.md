@@ -1,25 +1,25 @@
-# ownclt-remember commands.
+# myclt-remember commands.
 
 Set and get data in `ssh`.
 
 ## Installation
 ```bash
-npm install -g ownclt
+npm install -g myclt
 # OR
-yarn global add ownclt
+yarn global add myclt
 ```
 
-Link the remember command to ownclt as `r` for convenience.
+Link the remember command to myclt as `r` for convenience.
 ```bash
-clt /link/git https://github.com/trapcodeio/ownclt-remember / r
+clt /link/git https://github.com/trapcodeio/myclt-remember / r
 ```
 
 To update the files of this command, run:
 ```bash
-clt /link/git/update https://github.com/trapcodeio/ownclt-remember
+clt /link/git/update https://github.com/trapcodeio/myclt-remember
 ```
 
-- `/` is the path to the `ownclt.map.json` file in the repo.
+- `/` is the path to the `myclt.map.json` file in the repo.
 - `r` is the command `namespace` to be used
 
 Run `clt /list` to see the list of commands.

@@ -1,5 +1,5 @@
-import {defineCommands} from "ownclt/functions/Helpers";
-import {errorAndExit, success} from "ownclt/functions/Loggers";
+import {defineCommands} from "myclt/functions/Helpers";
+import {errorAndExit, success} from "myclt/functions/Loggers";
 import jsonbank from "./backup/jsonbank";
 
 

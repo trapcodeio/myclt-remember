@@ -367,6 +367,18 @@ mute-stream@0.0.8:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
+myclt@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/myclt/-/myclt-0.1.1.tgz#2d6ded5ac03f17011a7a7d7a7af06452fb0f0203"
+  integrity sha512-ETTDKkvccUAafvInlFrd9/MzzRtEroJoq3854YSNajpsvuniKG8IZpPVnNpJBCOOOJQLni/nw2eGFV6+oF48lw==
+  dependencies:
+    chalk "^4.1.0"
+    jsonpointer "^5.0.1"
+    object-collection "^3.0.1"
+    ora "^5.4.1"
+    ts-node "^10.9.1"
+    typescript "^5.1.6"
+
 object-collection@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/object-collection/-/object-collection-3.0.1.tgz#cb7f17cfa41af4ac8eef280dcee4e99b7c134791"
@@ -401,18 +413,6 @@ os-tmpdir@~1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
   integrity sha512-D2FR03Vir7FIu45XBY20mTb+/ZSWB00sjU9jdQXt83gDrI4Ztz5Fs7/yy74g2N5SVQY4xY1qDr4rNddwYRVX0g==
-
-ownclt@^0.2.14:
-  version "0.2.14"
-  resolved "https://registry.yarnpkg.com/ownclt/-/ownclt-0.2.14.tgz#42c998a372b846fb9fcb48d09599ef1ac45a71c3"
-  integrity sha512-c8UlVjFWYV2ZGSsn00yyB3KjHyL5q2LF7wGUphbAfeoCsNDD2ifbmsgUeBsai9jo3NWLBftcvGoPcQ90R9NLZg==
-  dependencies:
-    chalk "^4.1.0"
-    jsonpointer "^5.0.1"
-    object-collection "^3.0.1"
-    ora "^5.4.1"
-    ts-node "^10.9.1"
-    typescript "^5.1.6"
 
 proxy-from-env@^1.1.0:
   version "1.1.0"
