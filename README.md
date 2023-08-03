@@ -14,6 +14,11 @@ Link the remember command to ownclt as `r` for convenience.
 clt /link/git https://github.com/trapcodeio/ownclt-remember / r
 ```
 
+To update the files of this command, run:
+```bash
+clt /link/git/update https://github.com/trapcodeio/ownclt-remember
+```
+
 - `/` is the path to the `ownclt.map.json` file in the repo.
 - `r` is the command `namespace` to be used
 
