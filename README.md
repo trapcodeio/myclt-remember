@@ -3,6 +3,7 @@
 Set and get data in `ssh`.
 
 ## Installation
+Install `clt` if not already installed.
 ```bash
 npm install -g myclt
 # OR
