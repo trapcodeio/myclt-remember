@@ -1,6 +1,6 @@
 {
   "name": "myclt-remember",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A myclt command that stores data in the command line.",
   "main": "index.js",
   "repository": "https://github.com/trapcodeio/myclt-remember",
