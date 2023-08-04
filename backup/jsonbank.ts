@@ -1,4 +1,4 @@
-import {defineCommand} from "myclt/functions/Helpers";
+import {defineCommand} from "myclt/functions/helpers";
 import {Q} from "semantic-inquirer";
 import {JsonBank} from "jsonbank";
 
@@ -20,6 +20,9 @@ async function initializeJsonBank() {
     });
 }
 
+/**
+ * Backup remember store to jsonbank
+ */
 const Backup = defineCommand(async ({store, args: [project], log}) => {
 
     // initialize jsonbank
@@ -57,6 +60,9 @@ const Backup = defineCommand(async ({store, args: [project], log}) => {
 });
 
 
+/**
+ * Restore remember store from jsonbank
+ */
 const Restore = defineCommand(async ({ log, store, args: [project]}) => {
     // initialize jsonbank
     const jsb = await initializeJsonBank()

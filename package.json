@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "jsonbank": "^1.5.0",
-    "myclt": "^0.1.1",
+    "myclt": "^0.1.2",
     "semantic-inquirer": "^0.1.1"
   }
 }
