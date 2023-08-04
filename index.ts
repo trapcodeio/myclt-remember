@@ -1,6 +1,7 @@
 import { defineCommands } from "myclt/functions/helpers";
 import { errorAndExit, success } from "myclt/functions/loggers";
 import jsonbank from "./backup/jsonbank";
+import * as fs from "fs";
 
 export default defineCommands({
     set({ command, store, args }) {
@@ -58,12 +59,20 @@ export default defineCommands({
     },
 
     /**
-     * Show json value of store or save to file if file is provided
+     * Show json value of store or write to file if file is provided
      * @param file
      */
-    json({ args: [filePath] }) {
+    json({ args: [filePath], store }) {
+        const data = store.collection().all();
+
         if (filePath) {
             if (!filePath.endsWith(".json")) filePath += ".json";
+
+            // write to file
+            fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+            success(`Written to file: ${filePath}`);
+        } else {
+            console.dir(data, { depth: null });
         }
     },
 

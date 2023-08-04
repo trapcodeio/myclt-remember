@@ -5,27 +5,33 @@
     "set": {
       "desc": "Set a value using a key.",
       "args": {
-        "key": "required: Key to set.",
-        "value": "required: Value to set."
+        "key": "Key to set.",
+        "value": "Value to set."
       }
     },
     "get": {
       "desc": "Get a value using a key.",
       "args": {
-        "key": "required: Key to get."
+        "key": "Key to get."
       }
     },
     "has": {
       "desc": "Check if a key exists.",
       "args": {
-        "key": "required: Key to check."
+        "key": "Key to check."
       }
     },
     "unset": {
       "desc": "Unset a key.",
       "args": {
-        "key": "required: Key to unset."
+        "key": "Key to unset."
       }
+    },
+    "json": {
+      "desc": "Show all data as json or write json to a file.",
+        "args": {
+            "file": "optional: File to write json to."
+        }
     },
     "backup/jsonbank": {
       "desc": "Backup your data to your Json bank account.",

@@ -22,7 +22,7 @@ async function initializeJsonBank() {
 }
 
 /**
- * Backup remember store to jsonbank
+ * Backup `remember` store to jsonbank
  */
 const Backup = defineCommand(async ({ store, args: [project], log }) => {
     // initialize jsonbank
@@ -58,7 +58,7 @@ const Backup = defineCommand(async ({ store, args: [project], log }) => {
 });
 
 /**
- * Restore remember store from jsonbank
+ * Restore `remember` store from jsonbank
  */
 const Restore = defineCommand(async ({ log, store, args: [project] }) => {
     // initialize jsonbank
