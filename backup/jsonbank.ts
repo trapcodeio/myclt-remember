@@ -1,6 +1,6 @@
-import {defineCommand} from "myclt/functions/helpers";
-import {Q} from "semantic-inquirer";
-import {JsonBank} from "jsonbank";
+import { defineCommand } from "myclt/functions/helpers";
+import { Q } from "semantic-inquirer";
+import { JsonBank } from "jsonbank";
 
 /**
  * Initialize jsonbank
@@ -8,14 +8,15 @@ import {JsonBank} from "jsonbank";
 async function initializeJsonBank() {
     // ask for the private key.
     const publicKey = await Q.ask(`Enter your Public key:`);
-    const privateKey = await Q.ask(`Enter your Private key:`, {type: `password`});
-    
+    const privateKey = await Q.ask(`Enter your Private key:`, {
+        type: `password`
+    });
 
     // initialize jsonbank
     return new JsonBank({
         keys: {
             pub: publicKey,
-            prv: privateKey,
+            prv: privateKey
         }
     });
 }
@@ -23,14 +24,13 @@ async function initializeJsonBank() {
 /**
  * Backup remember store to jsonbank
  */
-const Backup = defineCommand(async ({store, args: [project], log}) => {
-
+const Backup = defineCommand(async ({ store, args: [project], log }) => {
     // initialize jsonbank
-    const jsb = await initializeJsonBank()
+    const jsb = await initializeJsonBank();
 
     // check if the project is set
     if (!project) {
-        project = await Q.ask(`Enter the project name:`, {type: `input`});
+        project = await Q.ask(`Enter the project name:`, { type: `input` });
     }
 
     const data = store.collection().all();
@@ -40,36 +40,33 @@ const Backup = defineCommand(async ({store, args: [project], log}) => {
             name: `myclt-remember`,
             content: data,
             project
-        })
+        });
 
-        if(doc.exists) {
+        if (doc.exists) {
             // update the document
-            await jsb.updateOwnDocument(doc.id, data)
+            await jsb.updateOwnDocument(doc.id, data);
         }
 
         log.success(`Backup successful!`);
         log.info(`Project: ${project}`);
         log.info(`Document ID: ${doc.id}`);
         log.info(`Document Path: ${doc.path}`);
-
     } catch (error: any) {
         log.error(`Backup failed!`);
         log.error(error.message);
     }
-
 });
-
 
 /**
  * Restore remember store from jsonbank
  */
-const Restore = defineCommand(async ({ log, store, args: [project]}) => {
+const Restore = defineCommand(async ({ log, store, args: [project] }) => {
     // initialize jsonbank
-    const jsb = await initializeJsonBank()
+    const jsb = await initializeJsonBank();
 
     // check if project is set
     if (!project) {
-        project = await Q.ask(`Enter the project name:`, {type: `input`});
+        project = await Q.ask(`Enter the project name:`, { type: `input` });
     }
 
     try {
@@ -78,7 +75,7 @@ const Restore = defineCommand(async ({ log, store, args: [project]}) => {
 
         store.clear();
         store.set(content);
-        store.commitChanges()
+        store.commitChanges();
 
         log.success(`Restore successful!`);
         log.info(`Project: ${file.project}`);
@@ -90,4 +87,4 @@ const Restore = defineCommand(async ({ log, store, args: [project]}) => {
     }
 });
 
-export default {Backup, Restore}
+export default { Backup, Restore };

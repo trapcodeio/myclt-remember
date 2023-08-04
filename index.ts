@@ -1,10 +1,9 @@
-import {defineCommands} from "myclt/functions/helpers";
-import {errorAndExit, success} from "myclt/functions/loggers";
+import { defineCommands } from "myclt/functions/helpers";
+import { errorAndExit, success } from "myclt/functions/loggers";
 import jsonbank from "./backup/jsonbank";
 
-
 export default defineCommands({
-    set({command, store, args}) {
+    set({ command, store, args }) {
         if (args.length < 2) {
             return errorAndExit(`${command}: key and value are required!`);
         }
@@ -12,12 +11,12 @@ export default defineCommands({
         const [key, value] = args;
 
         store.set(key, value);
-        store.commitChanges()
+        store.commitChanges();
 
         success(`${key} ==> ${value}`);
     },
 
-    get({command, store, args}) {
+    get({ command, store, args }) {
         if (args.length < 1) {
             return errorAndExit(`${command}: key is required!`);
         }
@@ -32,7 +31,7 @@ export default defineCommands({
         console.log(value);
     },
 
-    has({command, store, args}) {
+    has({ command, store, args }) {
         if (args.length < 1) {
             return errorAndExit(`${command}: key is required!`);
         }
@@ -41,7 +40,7 @@ export default defineCommands({
         console.log(store.has(key));
     },
 
-    unset({command, store, args}) {
+    unset({ command, store, args }) {
         if (args.length < 1) {
             return errorAndExit(`${command}: key is required!`);
         }
@@ -58,6 +57,16 @@ export default defineCommands({
         success(`Unset: ${key}!`);
     },
 
-    backup: {jsonbank: jsonbank.Backup},
-    restore: {jsonbank: jsonbank.Restore}
+    /**
+     * Show json value of store or save to file if file is provided
+     * @param file
+     */
+    json({ args: [filePath] }) {
+        if (filePath) {
+            if (!filePath.endsWith(".json")) filePath += ".json";
+        }
+    },
+
+    backup: { jsonbank: jsonbank.Backup },
+    restore: { jsonbank: jsonbank.Restore }
 });
