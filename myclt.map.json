@@ -30,7 +30,7 @@
     "json": {
       "desc": "Show all data as json or write json to a file.",
         "args": {
-            "file": "optional: File to write json to."
+            "file?": "File to write json to."
         }
     },
     "backup/jsonbank": {
