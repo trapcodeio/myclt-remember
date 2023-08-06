@@ -18,6 +18,8 @@ Link the remember command to myclt as `r` for convenience.
 clt /link/git https://github.com/trapcodeio/myclt-remember / r
 ```
 
+Run `clt /list` to see the list of commands.
+
 To update the files of this command, run:
 
 ```bash
@@ -26,5 +28,3 @@ clt /link/git/update https://github.com/trapcodeio/myclt-remember
 
 - `/` is the path to the `myclt.map.json` file in the repo.
 - `r` is the command `namespace` to be used
-
-Run `clt /list` to see the list of commands.
